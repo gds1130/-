@@ -76,20 +76,36 @@ position:relative;
 z-index:2;
 }
 .hero-sub{
-font-size:14px;
-letter-spacing:6px;
-color:#d1d5db;
-margin-bottom:20px;
+font-size:16px;
+letter-spacing:10px;
+color:rgba(255,255,255,.7);
+margin-bottom:25px;
+
+opacity:0;
+animation:fadeUp 1.5s ease forwards;
 }
-.hero h1{
-font-size:90px;
-font-weight:300;
-margin-bottom:20px;
+
+.hero-name{
+font-size:120px;
+font-weight:200;
+letter-spacing:10px;
+line-height:1;
+
+opacity:0;
+animation:fadeUp 2s ease .3s forwards;
 }
-.hero-desc{
-font-size:24px;
-color:#e5e7eb;
-margin-bottom:15px;
+
+.hero-tags{
+margin-top:25px;
+
+font-size:18px;
+
+letter-spacing:4px;
+
+color:rgba(255,255,255,.75);
+
+opacity:0;
+animation:fadeUp 2s ease .8s forwards;
 }
 .hero-text{
 font-size:18px;
@@ -168,6 +184,15 @@ transform:none;
 }
 /* 手机 */
 @media(max-width:768px){
+.hero-name{
+font-size:58px;
+letter-spacing:4px;
+}
+
+.hero-tags{
+font-size:14px;
+line-height:2;
+}
 .hero{
 background-position:75% center;
 }
@@ -190,6 +215,19 @@ font-size:24px;
 display:none;
 }
 }
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}  
 </style>
 </head>
 <body>
@@ -201,14 +239,16 @@ display:none;
 <a href="#contact">联系我</a >
 </div>
 </nav>
-<section class="hero">
-<div class="hero-content">
 <div class="hero-sub">
-AI USER · TRAVELER
+GAO DONGSHENG
 </div>
-<h1>高东升</h1>
-<div class="hero-desc">
-AI使用者 · 旅行者
+
+<h1 class="hero-name">
+高东升
+</h1>
+
+<div class="hero-tags">
+退伍军人 · AI使用者 · 旅行者 · 独立探索者
 </div>
 <div class="hero-text">
 退伍军人 · 创作者 · 独立探索者
