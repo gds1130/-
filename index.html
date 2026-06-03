@@ -1,320 +1,373 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>高东升 | AI使用者 · 旅行者</title>
+
+<title>高东升 | GAO DONGSHENG</title>
+
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 }
+
 html{
 scroll-behavior:smooth;
 }
+
 body{
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-background:#050505;
+background:#000;
 color:#fff;
 overflow-x:hidden;
 }
-/* 导航栏 */
-nav{
-position:fixed;
-top:20px;
-left:50%;
-transform:translateX(-50%);
-width:90%;
-max-width:1200px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 28px;
-background:rgba(255,255,255,.06);
-backdrop-filter:blur(20px);
-border:1px solid rgba(255,255,255,.08);
-border-radius:20px;
-z-index:999;
-}
-.logo{
-font-size:18px;
-font-weight:600;
-letter-spacing:2px;
-}
-.nav-links{
-display:flex;
-gap:30px;
-}
-.nav-links a{
-color:white;
-text-decoration:none;
-font-size:14px;
-}
+
 /* 首屏 */
+
 .hero{
+
 height:100vh;
-position:relative;
+
 background:
 linear-gradient(
-rgba(0,0,0,.45),
+rgba(0,0,0,.35),
 rgba(0,0,0,.75)
 ),
 url("hero.jpg/hero.jpg");
-background-size:cover;
-/* 保留人物位置 */
-background-position:70% center;
-display:flex;
-align-items:center;
-}
-.hero-content{
-width:100%;
-max-width:1200px;
-margin:auto;
-padding:0 10%;
-position:relative;
-z-index:2;
-}
-.hero-sub{
-font-size:16px;
-letter-spacing:10px;
-color:rgba(255,255,255,.7);
-margin-bottom:25px;
 
-opacity:0;
-animation:fadeUp 1.5s ease forwards;
+background-size:cover;
+background-position:75% center;
+background-repeat:no-repeat;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+position:relative;
+}
+
+/* 中央内容 */
+
+.hero-content{
+
+text-align:center;
+
+padding:40px;
+
+backdrop-filter:blur(2px);
+
+animation:fadeIn 2s ease;
+}
+
+.hero-en{
+
+font-size:13px;
+
+letter-spacing:10px;
+
+color:rgba(255,255,255,.6);
+
+margin-bottom:20px;
 }
 
 .hero-name{
-font-size:120px;
-font-weight:200;
-letter-spacing:10px;
-line-height:1;
 
-opacity:0;
-animation:fadeUp 2s ease .3s forwards;
+font-size:64px;
+
+font-weight:300;
+
+letter-spacing:10px;
+
+margin-bottom:18px;
 }
 
-.hero-tags{
-margin-top:25px;
+.hero-tag{
 
-font-size:18px;
+font-size:14px;
 
 letter-spacing:4px;
 
 color:rgba(255,255,255,.75);
+}
 
-opacity:0;
-animation:fadeUp 2s ease .8s forwards;
+/* Scroll */
+
+.scroll-tip{
+
+position:absolute;
+
+bottom:40px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:12px;
+
+letter-spacing:5px;
+
+color:rgba(255,255,255,.55);
+
+animation:float 2.5s infinite ease-in-out;
 }
-.hero-text{
-font-size:18px;
-color:#9ca3af;
-line-height:1.8;
-max-width:500px;
-}
-.scroll{
-margin-top:50px;
-display:inline-block;
-color:white;
-text-decoration:none;
-border:1px solid rgba(255,255,255,.2);
-padding:14px 30px;
-border-radius:50px;
-transition:.3s;
-}
-.scroll:hover{
-background:white;
-color:black;
-}
-/* 通用区域 */
-.section{
-max-width:1000px;
-margin:auto;
+
+/* 第二屏 */
+
+.about{
+
+background:#050505;
+
 padding:120px 30px;
+
+text-align:center;
 }
-.section-title{
-font-size:42px;
+
+.about h2{
+
+font-size:36px;
+
 font-weight:300;
+
 margin-bottom:40px;
 }
-.section p{
+
+.about p{
+
+max-width:700px;
+
+margin:auto;
+
 line-height:2;
+
 font-size:18px;
+
 color:#d1d5db;
 }
-/* 人生信条 */
-.quote{
-font-size:36px;
-line-height:1.6;
-font-weight:300;
-color:white;
-text-align:center;
-padding:100px 20px;
-}
+
 /* 联系方式 */
+
 .contact{
+
+padding:120px 30px;
+
 text-align:center;
 }
+
+.contact h2{
+
+font-size:36px;
+
+font-weight:300;
+
+margin-bottom:40px;
+}
+
 .contact-item{
+
 margin:20px 0;
+
 font-size:18px;
 }
+
 .contact-label{
-color:#9ca3af;
+
 display:block;
+
+color:#888;
+
 margin-bottom:10px;
 }
+
 /* 页脚 */
+
 footer{
+
 padding:60px 20px;
+
 text-align:center;
-color:#6b7280;
+
+color:#666;
+
 border-top:1px solid rgba(255,255,255,.05);
 }
-/* 动画 */
-.fade{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-.fade.show{
-opacity:1;
-transform:none;
-}
-/* 手机 */
-@media(max-width:768px){
-.hero-name{
-font-size:58px;
-letter-spacing:4px;
-}
 
-.hero-tags{
-font-size:14px;
-line-height:2;
-}
-.hero{
-background-position:75% center;
-}
-.hero h1{
-font-size:48px;
-}
-.hero-desc{
-font-size:20px;
-}
-.hero-text{
-font-size:16px;
-}
-.section-title{
-font-size:32px;
-}
-.quote{
-font-size:24px;
-}
-.nav-links{
-display:none;
-}
-}
-@keyframes fadeUp{
+/* 动画 */
+
+@keyframes fadeIn{
 
 from{
+
 opacity:0;
-transform:translateY(40px);
+
+transform:translateY(30px);
 }
 
 to{
+
 opacity:1;
+
 transform:translateY(0);
 }
 
-}  
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateX(-50%) translateY(0);
+}
+
+50%{
+
+transform:translateX(-50%) translateY(10px);
+}
+
+100%{
+
+transform:translateX(-50%) translateY(0);
+}
+
+}
+
+/* 手机 */
+
+@media(max-width:768px){
+
+.hero{
+
+background-position:70% center;
+}
+
+.hero-name{
+
+font-size:42px;
+
+letter-spacing:4px;
+}
+
+.hero-en{
+
+font-size:11px;
+
+letter-spacing:4px;
+}
+
+.hero-tag{
+
+font-size:12px;
+
+line-height:2;
+}
+
+.about h2,
+.contact h2{
+
+font-size:28px;
+}
+
+.about p{
+
+font-size:16px;
+}
+
+}
+
 </style>
+
 </head>
+
 <body>
-<nav>
-<div class="logo">GAO DONGSHENG</div>
-<div class="nav-links">
-<a href=" ">关于我</a >
-<a href="#belief">人生信条</a >
-<a href="#contact">联系我</a >
-</div>
-</nav>
-<div class="hero-sub">
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-en">
 GAO DONGSHENG
 </div>
 
-<h1 class="hero-name">
+<div class="hero-name">
 高东升
-</h1>
+</div>
 
-<div class="hero-tags">
-退伍军人 · AI使用者 · 旅行者 · 独立探索者
+<div class="hero-tag">
+退伍军人 · AI使用者 · 旅行者
 </div>
-<div class="hero-text">
-退伍军人 · 创作者 · 独立探索者
-<br><br>
-持续学习，
-持续探索，
-持续前行。
+
 </div>
-<a href="#about" class="scroll">
-向下探索 ↓
-</a >
+
+<div class="scroll-tip">
+SCROLL ↓
 </div>
+
 </section>
-<section id="about" class="section fade">
-<h2 class="section-title">
-关于我
-</h2>
+
+<section class="about">
+
+<h2>关于我</h2>
+
 <p>
+
 你好，我是高东升。
+
 曾经是一名军人。
-如今，我热爱旅行、人工智能与创造。
+
+如今热爱旅行、人工智能与创造。
+
 我喜欢不断学习新的事物，
 也喜欢在路上观察世界。
-从军营到社会，
-从现实到互联网，
-我始终相信：
-行动比等待更重要，
+
+我相信：
+
+行动比等待更重要。
+
 经历比答案更珍贵。
-</p >
-</section>
-<section id="belief" class="fade">
-<div class="quote">
-“人生不是等待机会，<br>
-而是在行动中创造机会。”<br><br>
-保持热爱。<br>
+
+保持热爱，
 奔赴山海。
-</div>
+
+</p>
+
 </section>
-<section id="contact" class="section contact fade">
-<h2 class="section-title">
-联系我
-</h2>
+
+<section class="contact">
+
+<h2>联系我</h2>
+
 <div class="contact-item">
-<span class="contact-label">邮箱</span>
+
+<span class="contact-label">
+邮箱
+</span>
+
 1941921751@qq.com
+
 </div>
+
 <div class="contact-item">
-<span class="contact-label">微信</span>
+
+<span class="contact-label">
+微信
+</span>
+
 GDS1130Y
+
 </div>
+
 </section>
+
 <footer>
-© 2026 Gao Dongsheng
+
+© 2026 GAO DONGSHENG
+
 </footer>
-<script>
-const observer =
-new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('show');
-}
-});
-});
-document
-.querySelectorAll('.fade')
-.forEach(el=>observer.observe(el));
-</script>
+
 </body>
+
 </html>
